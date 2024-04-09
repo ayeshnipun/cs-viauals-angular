@@ -1,0 +1,65 @@
+<nav
+  id="navbar"
+  class="col-span-12 h-[5rem] justify-between py-4 px-24 sticky flex items-center top-0 left-0 right-0 z-50 transition-all"
+  [ngClass]="getAdditionalClass()"
+>
+  <div>
+    <img
+      src="../../../../assets/images/logos/logo.png"
+      alt="Logo"
+      class="h-12"
+    />
+  </div>
+  <div class="flex items-center space-x-4">
+    <a routerLink="/" class="text-white px-4 hover:cursor-pointer"> Home </a>
+
+    <!-- <div class="relative">
+      <a
+        (click)="handleDropDownState(showDropdown)"
+        class="text-white px-4 hover:cursor-pointer"
+      >
+        Services
+      </a>
+    </div> -->
+
+    <div
+      class="relative"
+      (mouseenter)="handleDropDownState(true)"
+      (mouseleave)="handleDropDownState(false)"
+    >
+      <a
+        routerLink="/portfolio"
+        class="text-white relative px-4 hover:cursor-pointer"
+      >
+        Portfolio
+        <div
+          *ngIf="showDropdown"
+          class="absolute top-full left-0 bg-black bg-opacity-75 py-2 px-4 rounded-md"
+        >
+          <a
+            routerLink="/portfolio/portraits"
+            class="text-white block py-1 whitespace-nowrap hover:cursor-pointer"
+            >Portraits</a
+          >
+          <a
+            routerLink="/portfolio/landscape"
+            class="text-white block py-1 whitespace-nowrap hover:cursor-pointer"
+            >Landscape</a
+          >
+          <a
+            routerLink="/portfolio/interior"
+            class="text-white block py-1 whitespace-nowrap hover:cursor-pointer"
+            >Interior</a
+          >
+          <a
+            routerLink="/portfolio/ariel"
+            class="text-white block py-1 whitespace-nowrap hover:cursor-pointer"
+            >Ariel</a
+          >
+        </div>
+      </a>
+    </div>
+    <a routerLink="/about" class="text-white px-4 hover:cursor-pointer"> About </a>
+    <a routerLink="/contact" class="text-white px-4 hover:cursor-pointer"> Contact </a>
+  </div>
+</nav>
